@@ -1,4 +1,4 @@
-# Desafio Domain Driven Design (DDD)
+# Desafio Clean Architecture
 
 <p align="center">
     <a href="#-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -10,7 +10,7 @@
 
 ## 💻 Sobre
 
-Este projeto foi desenvolvido seguindo os princípios do DDD. Todos os conceitos do TDD são mostrados neste projeto.
+Este projeto foi desenvolvido seguindo os princípios do Clean Architecture. Todos os conceitos do TDD e Integration Testing são mostrados neste projeto.
 
 <br/>
 
@@ -30,10 +30,10 @@ Clone o repositório
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/Wesley45/ddd.git
+$ git clone https://github.com/Wesley45/clean-architecture.git
 
 # Entre no repositório
-$ cd ddd
+$ cd clean-architecture
 
 # Instalar as dependências
 $ npm install
