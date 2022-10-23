@@ -33,10 +33,10 @@ describe("Integration test find product use case", () => {
 
     await productRepository.create(product);
 
-    const result = await findProductUseCase.execute({ id: product.id });
+    const result = await findProductUseCase.execute({ id: product.getId() });
 
     const output = {
-      id: product.id,
+      id: product.getId(),
       name: product.name,
       price: product.price,
     };

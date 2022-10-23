@@ -40,7 +40,7 @@ describe("Unit test create product use case", () => {
         name: "",
         price: input.price,
       });
-    }).rejects.toThrow("Name is required");
+    }).rejects.toThrow("product: Name is required");
   });
 
   it("should throw an error when price is missing", async () => {
@@ -52,6 +52,6 @@ describe("Unit test create product use case", () => {
         name: input.name,
         price: 0,
       });
-    }).rejects.toThrow("Price is required");
+    }).rejects.toThrow("product: Price is required");
   });
 });

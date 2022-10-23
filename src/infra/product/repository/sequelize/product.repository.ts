@@ -5,7 +5,7 @@ import { ProductRepositoryInterface } from "../../../../domain/product/repositor
 export class ProductRepository implements ProductRepositoryInterface {
   async create(entity: Product): Promise<void> {
     await ProductModel.create({
-      id: entity.id,
+      id: entity.getId(),
       name: entity.name,
       price: entity.price,
     });
@@ -19,7 +19,7 @@ export class ProductRepository implements ProductRepositoryInterface {
       },
       {
         where: {
-          id: entity.id,
+          id: entity.getId(),
         },
       }
     );

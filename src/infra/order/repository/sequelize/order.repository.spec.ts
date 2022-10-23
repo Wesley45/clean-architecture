@@ -54,11 +54,11 @@ describe("Order repository test", () => {
       "1",
       product.name,
       product.price,
-      product.id,
+      product.getId(),
       2
     );
 
-    const order = new Order("123", customer.id, [orderItem]);
+    const order = new Order("123", customer.getId(), [orderItem]);
 
     const orderRepository = new OrderRepository();
     await orderRepository.create(order);
@@ -72,7 +72,7 @@ describe("Order repository test", () => {
 
     expect(orderModel?.toJSON()).toStrictEqual({
       id: order.id,
-      customerId: customer.id,
+      customerId: customer.getId(),
       total: order.total(),
       items: [
         {
@@ -81,7 +81,7 @@ describe("Order repository test", () => {
           price: orderItem.price,
           quantity: orderItem.quantity,
           orderId: order.id,
-          productId: product.id,
+          productId: product.getId(),
         },
       ],
     });
@@ -104,11 +104,11 @@ describe("Order repository test", () => {
       "1",
       product.name,
       product.price,
-      product.id,
+      product.getId(),
       2
     );
 
-    const order = new Order("123", customer.id, [orderItem]);
+    const order = new Order("123", customer.getId(), [orderItem]);
 
     await orderRepository.create(order);
 
@@ -159,11 +159,11 @@ describe("Order repository test", () => {
       "1",
       product.name,
       product.price,
-      product.id,
+      product.getId(),
       2
     );
 
-    let order = new Order("1", customer.id, [orderItem]);
+    let order = new Order("1", customer.getId(), [orderItem]);
 
     const orderRepository = new OrderRepository();
     await orderRepository.create(order);
@@ -177,7 +177,7 @@ describe("Order repository test", () => {
 
     expect(orderModel?.toJSON()).toStrictEqual({
       id: order.id,
-      customerId: customer.id,
+      customerId: customer.getId(),
       total: order.total(),
       items: [
         {
@@ -186,7 +186,7 @@ describe("Order repository test", () => {
           price: orderItem.price,
           quantity: orderItem.quantity,
           orderId: order.id,
-          productId: product.id,
+          productId: product.getId(),
         },
       ],
     });
@@ -198,11 +198,11 @@ describe("Order repository test", () => {
       "2",
       product2.name,
       product2.price,
-      product2.id,
+      product.getId(),
       1
     );
 
-    order = new Order("1", customer.id, [orderItem, orderItem2]);
+    order = new Order("1", customer.getId(), [orderItem, orderItem2]);
     await orderRepository.update(order);
 
     const orderModel2 = await OrderModel.findOne({
@@ -212,7 +212,7 @@ describe("Order repository test", () => {
 
     expect(orderModel2?.toJSON()).toStrictEqual({
       id: order.id,
-      customerId: customer.id,
+      customerId: customer.getId(),
       total: order.total(),
       items: [
         {
@@ -221,7 +221,7 @@ describe("Order repository test", () => {
           price: orderItem.price,
           quantity: orderItem.quantity,
           orderId: order.id,
-          productId: product.id,
+          productId: product.getId(),
         },
         {
           id: orderItem2.id,
@@ -229,7 +229,7 @@ describe("Order repository test", () => {
           price: orderItem2.price,
           quantity: orderItem2.quantity,
           orderId: order.id,
-          productId: product2.id,
+          productId: product.getId(),
         },
       ],
     });
@@ -255,7 +255,7 @@ describe("Order repository test", () => {
       "1",
       product.name,
       product.price,
-      product.id,
+      product.getId(),
       2
     );
 
@@ -263,14 +263,14 @@ describe("Order repository test", () => {
       "2",
       product2.name,
       product2.price,
-      product2.id,
+      product.getId(),
       2
     );
 
-    const order = new Order("123", customer.id, [orderItem]);
+    const order = new Order("123", customer.getId(), [orderItem]);
     await orderRepository.create(order);
 
-    const order2 = new Order("456", customer.id, [orderItem2]);
+    const order2 = new Order("456", customer.getId(), [orderItem2]);
     await orderRepository.create(order2);
 
     const foundOrders = await orderRepository.findAll();

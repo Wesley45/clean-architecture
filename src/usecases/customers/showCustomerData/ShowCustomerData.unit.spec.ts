@@ -26,7 +26,7 @@ describe("Unit Test show customer data use case", () => {
     };
 
     const output = {
-      id: customer.id,
+      id: customer.getId(),
       name: customer.name,
       address: {
         street: address.street,

@@ -6,7 +6,7 @@ import { Address } from "../../../../domain/customer/value-object/address";
 export class CustomerRepository implements CustomerRepositoryInterface {
   async create(entity: Customer): Promise<void> {
     await CustomerModel.create({
-      id: entity.id,
+      id: entity.getId(),
       name: entity.name,
       street: entity.Address.street,
       number: entity.Address.number,
@@ -30,7 +30,7 @@ export class CustomerRepository implements CustomerRepositoryInterface {
       },
       {
         where: {
-          id: entity.id,
+          id: entity.getId(),
         },
       }
     );

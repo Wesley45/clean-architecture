@@ -35,13 +35,13 @@ describe("Integration test update product use case", () => {
     product.changePrice(20.0);
 
     const result = await updateProductUseCase.execute({
-      id: product.id,
+      id: product.getId(),
       name: product.name,
       price: product.price,
     });
 
     const output = {
-      id: product.id,
+      id: product.getId(),
       name: product.name,
       price: product.price,
     };

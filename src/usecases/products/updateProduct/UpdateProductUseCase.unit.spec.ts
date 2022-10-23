@@ -5,7 +5,7 @@ import { UpdateProductUseCase } from "./UpdateProductUseCase";
 const product = ProductFactory.create("Product A", 10.0);
 
 const input = {
-  id: product.id,
+  id: product.getId(),
   name: product.name,
   price: 20.0,
 };
@@ -25,7 +25,7 @@ describe("Unit test update product use case", () => {
     const updateProductUseCase = new UpdateProductUseCase(productRepository);
 
     const output = await updateProductUseCase.execute({
-      id: product.id,
+      id: product.getId(),
       name: product.name,
       price: input.price,
     });

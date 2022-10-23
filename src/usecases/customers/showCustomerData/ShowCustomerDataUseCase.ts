@@ -22,7 +22,7 @@ export class ShowCustomerDataUseCase {
     }
 
     return {
-      id: customer.id,
+      id: customer.getId(),
       name: customer.name,
       address: {
         street: customer.Address.street,

@@ -30,11 +30,11 @@ describe("Unit test for listing customer use case", () => {
     const output = await listCustomerUseCase.execute({});
 
     expect(output.customers.length).toBe(2);
-    expect(output.customers[0].id).toBe(customer1.id);
+    expect(output.customers[0].id).toBe(customer1.getId());
     expect(output.customers[0].name).toBe(customer1.name);
     expect(output.customers[0].address.street).toBe(customer1.Address.street);
 
-    expect(output.customers[1].id).toBe(customer2.id);
+    expect(output.customers[1].id).toBe(customer2.getId());
     expect(output.customers[1].name).toBe(customer2.name);
     expect(output.customers[1].address.street).toBe(customer2.Address.street);
   });

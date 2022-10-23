@@ -77,7 +77,7 @@ describe("Customer repository test", () => {
     customer.changeAddress(address);
     await customerRepository.create(customer);
 
-    const customerResult = await customerRepository.find(customer.id);
+    const customerResult = await customerRepository.find(customer.getId());
 
     expect(customer).toStrictEqual(customerResult);
   });
