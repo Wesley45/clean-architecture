@@ -47,7 +47,7 @@ describe("Unit test create product use case", () => {
     const productRepository = MockRepository();
     const createCustomerUseCase = new CreateProductUseCase(productRepository);
 
-    expect(async () => {
+    await expect(async () => {
       await createCustomerUseCase.execute({
         name: input.name,
         price: 0,
